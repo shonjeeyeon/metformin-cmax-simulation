@@ -1,4 +1,4 @@
-### Simulation of Metforming Pharmacokinetics using Monte Carlo and Bootstrap
+# Simulation of Metforming Pharmacokinetics using Monte Carlo and Bootstrap
 
 ## Introduction
 Metformin is a well-established, first-line drug used to manage blood glucose in patients with type 2 diabetes. The medication is generally considered safe and effective, but the buildup of excessive drug in the system due to inadequate elimination might result in serious adverse effects, such as lactic acidosis. [1]

@@ -40,7 +40,7 @@ The disadvantage of pointwise bootstrapping is that it is parametric and might n
 
 
 ## Results and Discussion
-# Cmax and Dose-Normalized Cmax vs. eGFR
+### Cmax and Dose-Normalized Cmax vs. eGFR
 
 <img src="metformin_cmax_tmax_simulation_files/figure-gfm/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto auto auto 0;" />
 <img src="metformin_cmax_tmax_simulation_files/figure-gfm/unnamed-chunk-8-2.png" width="80%" style="display: block; margin: auto auto auto 0;" />
@@ -53,7 +53,7 @@ When eGFR lies between 30 and 45 mL/min/1.73m2, the confidence band is still sig
 Overall, the splined curve and the confidence bands are consistent with the known facts about metformin.
 
 
-# Tmax vs. eGFR
+### Tmax vs. eGFR
 
 <img src="metformin_cmax_tmax_simulation_files/figure-gfm/unnamed-chunk-8-3.png" width="80%" style="display: block; margin: auto auto auto 0;" /> 
 Graph 3. Tmax vs. eGFR.

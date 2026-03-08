@@ -73,11 +73,11 @@ Overall, the simulated project revealed the mean and confidence interval of Cmax
 
 
 ## References
-[1] METFORMIN HYDROCHLORIDE tablet, film coated [Internet]. Bethesda, MD: National Institute of Health; 2020. [cited November 9, 2025] Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56d13a1c-b289-4528-b23c-60f5427b4552 \n
-[2] Corcoran C, Jacobs TF. Metformin. [Updated 2023 Aug 17]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. [cited November 9, 2025] Available from: https://www.ncbi.nlm.nih.gov/books/NBK518983/
-[3] Helms HJ, Benda N, Zinserling J, Kneib T, Friede T. Spline-based procedures for dose-finding studies with active control. Stat Med. 2015 Jan 30;34(2):232-48.
-[4] Herold JM, Wiegrebe S, Nano J, Jung B, Gorski M, Thorand B, Koenig W, Zeller T, Zimmermann ME, Burkhardt R, Banas B, Küchenhoff H, Stark KJ, Peters A, Böger CA, Heid IM, Population-Based Reference Values for Kidney Function and Kidney Function Decline in 25- to 95-Year-Old Germans without and with Diabetes. Kidney Int [Internet]. 2024;106(4): 699-711.
-[5] Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney Int [Internet]. 2024 Apr;105(4S):S117-S314
-[6] Elassaiss-Schaap J, Duisters K. Variability in the Log Domain and Limitations to Its Approximation by the Normal Distribution. CPT Pharmacometrics Syst Pharmacol [Internet]. 2020 May;9(5):245-257.
-[7] Saranya S, Christy S, Kumari VS. Predictive Frameworks for Osteoporosis Identification. In: Recent Trends in Advanced Computing: 7th International Conference, ICRTAC 2024, Chennai, India, November 14–15, 2024, Proceedings. (2025). Switzerland: Springer Nature Switzerland, 2025, p.64-76.
-[8] Givens GH, Hoetings JA. Computational Statistics: Second Edition. Hoboken, NJ: Wiley, 2013.
+1. METFORMIN HYDROCHLORIDE tablet, film coated [Internet]. Bethesda, MD: National Institute of Health; 2020. [cited November 9, 2025] Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56d13a1c-b289-4528-b23c-60f5427b4552
+2. Corcoran C, Jacobs TF. Metformin. [Updated 2023 Aug 17]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. [cited November 9, 2025] Available from: https://www.ncbi.nlm.nih.gov/books/NBK518983/
+3. Helms HJ, Benda N, Zinserling J, Kneib T, Friede T. Spline-based procedures for dose-finding studies with active control. Stat Med. 2015 Jan 30;34(2):232-48.
+4. Herold JM, Wiegrebe S, Nano J, Jung B, Gorski M, Thorand B, Koenig W, Zeller T, Zimmermann ME, Burkhardt R, Banas B, Küchenhoff H, Stark KJ, Peters A, Böger CA, Heid IM, Population-Based Reference Values for Kidney Function and Kidney Function Decline in 25- to 95-Year-Old Germans without and with Diabetes. Kidney Int [Internet]. 2024;106(4): 699-711.
+5. Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney Int [Internet]. 2024 Apr;105(4S):S117-S314
+6. Elassaiss-Schaap J, Duisters K. Variability in the Log Domain and Limitations to Its Approximation by the Normal Distribution. CPT Pharmacometrics Syst Pharmacol [Internet]. 2020 May;9(5):245-257.
+7. Saranya S, Christy S, Kumari VS. Predictive Frameworks for Osteoporosis Identification. In: Recent Trends in Advanced Computing: 7th International Conference, ICRTAC 2024, Chennai, India, November 14–15, 2024, Proceedings. (2025). Switzerland: Springer Nature Switzerland, 2025, p.64-76.
+8. Givens GH, Hoetings JA. Computational Statistics: Second Edition. Hoboken, NJ: Wiley, 2013.

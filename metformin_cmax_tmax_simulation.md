@@ -452,19 +452,19 @@ p_boot_Tmax = ggplot(boot_Tmax, aes(eGFR, fit)) +
 print(p_boot_Cmax)
 ```
 
-<img src="Final-Project_files/figure-gfm/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto auto auto 0;" />
+<img src="metformin_cmax_tmax_simulation/figure-gfm/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto auto auto 0;" />
 
 ``` r
 print(p_boot_Cmax_norm)
 ```
 
-<img src="Final-Project_files/figure-gfm/unnamed-chunk-8-2.png" width="80%" style="display: block; margin: auto auto auto 0;" />
+<img src="metformin_cmax_tmax_simulation/figure-gfm/unnamed-chunk-8-2.png" width="80%" style="display: block; margin: auto auto auto 0;" />
 
 ``` r
 print(p_boot_Tmax)
 ```
 
-<img src="Final-Project_files/figure-gfm/unnamed-chunk-8-3.png" width="80%" style="display: block; margin: auto auto auto 0;" />
+<img src="metformin_cmax_tmax_simulation/figure-gfm/unnamed-chunk-8-3.png" width="80%" style="display: block; margin: auto auto auto 0;" />
 \# 7. Compare the Three Curves
 
 ``` r
@@ -486,4 +486,5 @@ combined_boot = (
 print(combined_boot)
 ```
 
-<img src="Final-Project_files/figure-gfm/unnamed-chunk-9-1.png" width="80%" style="display: block; margin: auto auto auto 0;" />
+<img src="metformin_cmax_tmax_simulation/figure-gfm/unnamed-chunk-9-1.png" width="80%" style="display: block; margin: auto auto auto 0;" />
+

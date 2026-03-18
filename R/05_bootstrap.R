@@ -38,7 +38,7 @@ bootstrap_band <- function(pk_summary, grid, param = c("Cmax", "Cmax_norm", "Tma
     )
 
     gam_b <- gam(formula, data = sim_b)
-    boot_mat[b, ] <- predict(gam_b, newdata = grid)
+    boot_mat[b, ] <- as.numeric(predict(gam_b, newdata = grid))
   }
 
   tibble(
@@ -59,4 +59,5 @@ bootstrap_curves <- bind_rows(
   boot_Tmax %>% mutate(parameter = "Tmax")
 )
 
+dir.create(here("data", "derived"), recursive = TRUE, showWarnings = FALSE)
 write_csv(bootstrap_curves, here("data", "derived", "bootstrap_curves.csv"))

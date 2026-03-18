@@ -21,8 +21,6 @@ Source: <https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56d13a1c-b289-
 knitr::include_graphics(here::here("data", "raw", "table4.png"))
 ```
 
-> Add the original figure to `data/raw/table4.png` to render it in the report.
-
 # 1. Libraries and Dataset
 
 The project now loads packages and constructs the summary dataset from reusable scripts.

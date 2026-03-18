@@ -1,0 +1,24 @@
+pk_summary <- tribble(
+  ~group,                   ~dose_mg, ~regimen,   ~eGFR_mean, ~eGFR_sd,
+  ~Cmax_mean, ~Cmax_sd, ~Tmax_mean, ~Tmax_sd, ~n,
+  "Healthy 500mg single",        500, "single",      102.23,  14.18,
+  1.03,      0.33,     2.75,      0.81,     24,
+  "Healthy 850mg single",        850, "single",      102.23,  14.18,
+  1.60,      0.38,     2.64,      0.82,     74,
+  "Healthy 850mg TID×19",        850, "multiple",    102.23,  14.18,
+  2.01,      0.42,     1.79,      0.94,      9,
+  "T2D 850mg single",            850, "single",       96.32,  17.22,
+  1.48,      0.50,     3.32,      1.08,     23,
+  "T2D 850mg TID×19",            850, "multiple",     96.32,  17.22,
+  1.90,      0.62,     2.01,      1.22,      9,
+  "Elderly 850mg single",        850, "single",       78.32,  14.93,
+  2.45,      0.70,     2.71,      1.05,     12,
+  "CKD mild (G2) 850mg",         850, "single",       75.00,  10.00,
+  1.86,      0.52,     3.20,      0.45,      5,
+  "CKD moderate (G3) 850mg",     850, "single",       45.00,  10.00,
+  4.12,      1.83,     3.75,      0.50,      4,
+  "CKD severe (G4) 850mg",       850, "single",       20.00,   6.00,
+  3.93,      0.92,     4.01,      1.10,      6
+)
+
+write_csv(pk_summary, here("data", "derived", "pk_summary.csv"))

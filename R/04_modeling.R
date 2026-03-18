@@ -13,21 +13,29 @@ make_prediction_grid <- function(models, egfr_seq = seq(10, 120, by = 1)) {
   pred_Tmax <- predict(models$gam_Tmax, grid, se.fit = TRUE)
   pred_Cmax_norm <- predict(models$gam_Cmax_norm, grid, se.fit = TRUE)
 
+  cmax_fit <- as.numeric(pred_Cmax$fit)
+  cmax_se <- as.numeric(pred_Cmax$se.fit)
+  tmax_fit <- as.numeric(pred_Tmax$fit)
+  tmax_se <- as.numeric(pred_Tmax$se.fit)
+  cmax_norm_fit <- as.numeric(pred_Cmax_norm$fit)
+  cmax_norm_se <- as.numeric(pred_Cmax_norm$se.fit)
+
   grid %>%
     mutate(
-      Cmax_fit = pred_Cmax$fit,
-      Cmax_lwr = Cmax_fit - 1.96 * pred_Cmax$se.fit,
-      Cmax_upr = Cmax_fit + 1.96 * pred_Cmax$se.fit,
-      Tmax_fit = pred_Tmax$fit,
-      Tmax_lwr = Tmax_fit - 1.96 * pred_Tmax$se.fit,
-      Tmax_upr = Tmax_fit + 1.96 * pred_Tmax$se.fit,
-      Cmax_norm_fit = pred_Cmax_norm$fit,
-      Cmax_norm_lwr = Cmax_norm_fit - 1.96 * pred_Cmax_norm$se.fit,
-      Cmax_norm_upr = Cmax_norm_fit + 1.96 * pred_Cmax_norm$se.fit
+      Cmax_fit = cmax_fit,
+      Cmax_lwr = cmax_fit - 1.96 * cmax_se,
+      Cmax_upr = cmax_fit + 1.96 * cmax_se,
+      Tmax_fit = tmax_fit,
+      Tmax_lwr = tmax_fit - 1.96 * tmax_se,
+      Tmax_upr = tmax_fit + 1.96 * tmax_se,
+      Cmax_norm_fit = cmax_norm_fit,
+      Cmax_norm_lwr = cmax_norm_fit - 1.96 * cmax_norm_se,
+      Cmax_norm_upr = cmax_norm_fit + 1.96 * cmax_norm_se
     )
 }
 
 models <- fit_pk_models(sim_data = sim_data, k = 4)
 prediction_grid <- make_prediction_grid(models = models)
 
+dir.create(here("data", "derived"), recursive = TRUE, showWarnings = FALSE)
 write_csv(prediction_grid, here("data", "derived", "prediction_grid.csv"))

@@ -1,0 +1,79 @@
+---
+title: "Metformin Cmax and Tmax Simulation"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.align = "left", out.width = "80%")
+source(here::here("R", "01_packages.R"))
+source(here::here("R", "02_data.R"))
+source(here::here("R", "03_simulation.R"))
+source(here::here("R", "04_modeling.R"))
+source(here::here("R", "05_bootstrap.R"))
+source(here::here("R", "06_plotting.R"))
+```
+
+# The Original Pharmacokinetics Table
+
+Source: <https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56d13a1c-b289-4528-b23c-60f5427b4552>
+
+```{r original-table, echo=FALSE, eval=FALSE}
+knitr::include_graphics(here::here("data", "raw", "table4.png"))
+```
+
+
+# 1. Libraries and Dataset
+
+The project now loads packages and constructs the summary dataset from reusable scripts.
+
+```{r dataset, echo=TRUE}
+pk_summary
+```
+
+# 2. Simulate the Population
+
+Simulated individual-level data are generated from the summary table using normal assumptions for eGFR and lognormal assumptions for Cmax and Tmax.
+
+```{r sim-data, echo=TRUE}
+dplyr::glimpse(sim_data)
+```
+
+# 3. Fit the Parameters to Spline (`k = 4`)
+
+Generalized additive models are used to smooth each PK endpoint over eGFR.
+
+```{r model-grid, echo=TRUE}
+dplyr::glimpse(prediction_grid)
+```
+
+# 4. Build Plots for Cmax and Tmax
+
+```{r joint-plot, echo=FALSE}
+p_joint
+```
+
+# 5. Bootstrapped Confidence Bands
+
+```{r boot-preview, echo=TRUE}
+head(bootstrap_curves)
+```
+
+# 6. Plot the Confidence Bands
+
+```{r boot-cmax, echo=FALSE}
+p_boot_Cmax
+```
+
+```{r boot-cmax-norm, echo=FALSE}
+p_boot_Cmax_norm
+```
+
+```{r boot-tmax, echo=FALSE}
+p_boot_Tmax
+```
+
+# 7. Compare the Three Curves
+
+```{r combined-boot, echo=FALSE}
+combined_boot
+```

@@ -33,4 +33,6 @@ simulate_pk_data <- function(pk_summary, n_sim = 1000) {
 Nsim <- 1000
 sim_data <- simulate_pk_data(pk_summary = pk_summary, n_sim = Nsim)
 
+dir.create(here("data", "derived"), recursive = TRUE, showWarnings = FALSE)
 write_csv(sim_data, here("data", "derived", "sim_data.csv"))
+

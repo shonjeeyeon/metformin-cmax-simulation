@@ -1,6 +1,6 @@
 # Simulation of Metforming Pharmacokinetics using Monte Carlo and Bootstrap
 
-## Introduction
+## I. Introduction
 Metformin is a well-established, first-line drug used to manage blood glucose in patients with type 2 diabetes. The medication is generally considered safe and effective, but the buildup of excessive drug in the system due to inadequate elimination might result in serious adverse effects, such as lactic acidosis. [1]
 Therefore, the medication label and dosing guidelines have set dose adjustments for renally impaired patients, using estimated Glomerular Filtration Rate (eGFR) as a metric: [1], [2]
 1)	eGFR < 30 mL/min/1.73 m2: Contraindicated (Do not take)
@@ -17,18 +17,18 @@ The goal of the study is to use computational statistics to:
 The structure of the project largely referenced “Spline-based procedures for dose-finding studies with active control,” (Helms et al, 2015) which investigated dosing regimen of antidiabetic medications using spline methods. [3]
 
 
-## Monte Carlo Simulation of the Population
+## II. Monte Carlo Simulation of the Population
 In the project, the population groups were simulated using Monte Carlo (n=1,000). Monte Carlo in this case has advantages as it is more cost- and time- effective than collecting observed population data and removing sensitive information. It is also beneficial in investigating topics with ethical issues, which is the topic of the study might face in the real world, as the study involves critically ill patients and may exposure subjects to health risks.
 The mean and standard deviations of the parameters were collected from the package insert of metformin. [1] Because the insert did not include eGFR values, the values were imputed using a population-based study in Germany and the KDIGO Chronic Kidney Disease Guideline. [4]], [5]
 For parameters, Cmax and Tmax were simulated using log-normal distribution because log-normal distribution is considered to describe pharmacokinetic parameters and is used often in studies. [6]
 
 
-## Using Splines with GAM to Estimation of Pharmacokinetic Functions
+## III. Using Splines with GAM to Estimation of Pharmacokinetic Functions
 To estimate how Cmax and Tmax relate to eGFR, smoothing splines with generalized additive model (GAM) was used. Splines are preferred over parametric techniques when the observed function is unknown or does not follow a parametric form. The pharmacokinetics of medications vary over products and formulations, so a specific distribution could not be assumed. Unlike linear regression, splining can also include multiple equations along the intervals, so it is useful when the slope and curvature may vary across the x-axis. [7], [8]
 Generalized additive model (GAM) was used to reduce the risk of overfitting from noises and outliers as well as to avoid arbitrarily setting the intervals which may affect the prediction of the curve. In the study, k=4 was used to set the nodes. [7]
 
 
-## Using Bootstrapping to Construct Confidence Bands
+## IV. Using Bootstrapping to Construct Confidence Bands
 Pointwise bootstrapping was applied to build the 95% confidence bands. In pointwise bootstrapping, the steps are as follows:
 1)	Re-simulate and replace the simulated dataset
 2)	Fit the spline models to the newly bootstrapped dataset
@@ -39,7 +39,7 @@ In the study, B=300 and the 95% confidence level were used.
 The disadvantage of pointwise bootstrapping is that it is parametric and might not capture the actual confidence level perfectly. The method, compared to global bootstrapping, does not take the “simultaneous inference” into account, which can affect the width of the band. [8] However, due to limited resources, pointwise bootstrapping was used here.
 
 
-## Results and Discussion
+## V. Results and Discussion
 ### Cmax and Dose-Normalized Cmax vs. eGFR
 
 <img src="metformin_cmax_tmax_simulation_files/figure-gfm/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto auto auto 0;" />
@@ -47,10 +47,13 @@ The disadvantage of pointwise bootstrapping is that it is parametric and might n
 
 Graphs 1 and 2. Cmax vs. eGFR (Left) and Dose-normalized Cmax vs. eGFR (Right)
 
-Both raw and dose-normalized Cmax curves show that both the mean and confidence interval of Cmax increases as the renal function declines. This is consistent with the established finding the drug is eliminated through kidneys and patients with renal impairment can be at risk of toxicity buildup and adverse effects.
-The mean Cmax at eGFR = 30 mL/min/1.73m2 is twice higher than the mean of Cmax at eGFR = 90, regardless of the dose-normalization. Also, the confidence band is markedly wider at eGFR=30. This implies the pharmacodynamics in people with severe kidney diseases are much less predictable and therefore metformin therapy might not be safe. The finding is consistent with the current dosing guidelines where metformin use is contraindicated in patients with eGFR < 30mL/min/1.73m2. [1], [2]
-When eGFR lies between 30 and 45 mL/min/1.73m2, the confidence band is still significantly wider than at eGFR = 90, but the mean Cmax is lower than the contraindicated group. This is consistent with all the recommendations: Starting a new metformin therapy is generally discouraged, but continuation or reduction of the dose might be justified based on each patient’s situation. [2]
-Overall, the splined curve and the confidence bands are consistent with the known facts about metformin.
+* Both raw and dose-normalized Cmax curves show that both the mean and confidence interval of Cmax increases as the renal function declines. 
+* This is consistent with the established finding the drug is eliminated through kidneys and patients with renal impairment can be at risk of toxicity buildup and adverse effects.
+* The mean Cmax at eGFR = 30 mL/min/1.73m2 is twice higher than the mean of Cmax at eGFR = 90, regardless of the dose-normalization.
+* Also, the confidence band is markedly wider at eGFR=30.
+* This implies the pharmacodynamics in people with severe kidney diseases are much less predictable and therefore metformin therapy might not be safe. The finding is consistent with the current dosing guidelines where metformin use is contraindicated in patients with eGFR < 30mL/min/1.73m2. [1], [2]
+* When eGFR lies between 30 and 45 mL/min/1.73m2, the confidence band is still significantly wider than at eGFR = 90, but the mean Cmax is lower than the contraindicated group. This is consistent with all the recommendations: Starting a new metformin therapy is generally discouraged, but continuation or reduction of the dose might be justified based on each patient’s situation. [2]
+* Overall, the splined curve and the confidence bands are consistent with the known facts about metformin.
 
 
 ### Tmax vs. eGFR
